@@ -1,0 +1,63 @@
+2-1)
+
+Val = 231
+Double = 462
+
+2-2)
+
+Debut
+
+    Reel Nombre
+    Reel Carré
+    
+    Ecrire "Veuillez entrer un nombre :"
+    Lire Nombre
+
+    Carré <- Nombre * Nombre
+
+    Ecrire "Le carré de ", Nombre, " est : ", Carré
+
+Fin
+
+2-3) 
+
+Debut
+
+    Reel Prix_HT
+    Entier Nombre_Articles
+    Reel Taux_TVA
+    Reel Prix_TTC
+
+    Ecrire "Veuillez entrer le prix H de l'article :"
+    Lire Prix_HT
+
+    Ecrire "Veuillez entrer le nombre d'articles :"
+    Lire Nombre_Articles
+
+    Ecrire "Veuillez entrer le taux de TVA (En pourcentage) :"
+    Lire Taux_TVA
+
+    Prix_TTC <- (Prix_HT * Nombre_Articles) * (1 + Taux_TVA / 100)
+
+    Ecrire "Le prix total TTC est : ", Prix_TTC
+
+Fin
+
+2-4)
+
+Debut
+
+    Chaine Partie1 <- "Belle marquise"
+    Chaine Partie2 <- "Vos beaux yeux"
+    Chaine Partie3 <- "Me font mourir"
+    Chaine Partie4<- "D'amour"
+
+    Ecrire Partie1, ", ", Partie2, " ", Partie3, " ", Partie4
+
+    Ecrire Partie4, " ", Partie3, " ", Partie2, ", ", Partie1
+
+    Ecrire Partie 3, " ", Partie1, ", ", Partie2, " ", Partie4
+
+    Ecrire Partie2, ", ", Partie1, " ", Partie4, " ", Partie3
+
+Fin

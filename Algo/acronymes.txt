@@ -1,0 +1,40 @@
+  DICP # Méthodologie pour une analyse de risque (Disponibilité, Intégrité, Confidentialité, Preuve)
+  SOLID # Principes de conception (Single responsibility principle, Open/closed principle, Liskov substitution principle, Interface segregation principle, Dependency inversion principle)
+  KISS # Principe de conception (Keep It Simple, Stupid)
+  DRY # Don't Repeat Yourself
+  WET # Un code comportant des répétitions inutiles (Write Everything Twice)
+  AHA # Principe de conception (Avoid Hasty Abstraction)
+  Litterate Programming # Principe de conception impliquant que la documentation du code se fait avant la construction du code
+  Extreme Programming # Principe de conception pareils que les méthodes Agiles mais poussés (Forte réactivité, travail d'équipe, qualité de travail fourni, qualité des tests effectués au plus tôt)
+  YAGNI # Principe de conception qui indique qu'on ne doit pas ajouter de fonctionnalités tant que ce n'est pas absolument nécessaire (You Aren't Gonna Need It)
+  GRASP # Un algorithme d'optimisation pour résoudre des problèmes d'optimisation difficile (Greedy Randomized Adaptive Search Procedure)
+  TL;DR V Too Long ; Didn't Read
+  CMMI # Référentiel de bonnes pratiques qui place l'amélioration continue au centre des activités (Capability Maturity Model Integration)
+  WCAG # Guide de bonnes pratiques pour rendre son site accessibles pour les personnes en situation de handicap (Web Content Accessibility Guidelines)
+  MoSCoW V  Méthodes pour prioriser les tâches a mener dans un projet (Must have it, Should have it if possible, Could have it, Won't have this)
+  ACID # Principes permettant d'assurer que les transactions de bases de données sont traitées de façon fiable (Atomicité, Cohérence, Isolation, Durabilité)
+  CICD # Pratique pour les DevOps consistant a intégrer automatiquement et réguliérement les modifications de code dans un référenciel partagé
+  OWASP # Communauté donnant des moyens aux entreprises de concevoir, développer, acquérir, exploiter et maintenir des logiciels pour des applications sécurisés (Open Worldwide Application Security Project)
+  RGPD # V Réglement Général de la Protection des Données
+  AJAX # Méthode permettant de modifier une page web sans actualiser la page graçe a des requêtes vers le serveur web (Asynchronous JavaScript And XML)
+  CSRF # Cross Site Request Forgery
+  DOM # Document Object Model
+  JWT V Json Web Token
+  HTTP V HyperText Transfert Protocol 
+  JSON V JavaScript Object Notation
+  SGBD # Logiciel système permettant aux utilisateurs et programmeurs de créer et gérer des bases de données (Système de Gestion de Bases de Données)
+  SQL V Structured Query Language
+  UML # Langage de modélisation visuelle commun (Unified Modeling Language)
+  W3C # World Wide Web Consortium
+  XML # Extensible Markp Language
+  XSS # Faille de sécurité permettant a un attaquant d'injecter du code malveillant dans un site web (Cross-site Scripting)
+  BIG DATA # Données issues de la sphére web et des objets connectés (Mégadonnées ou Données Massives)
+  CLOUD COMPUTING # Pratique consistant a utiliser des serveurs a distance pour stocker, gérer et traiter des données, plutôt qu'un serveur local ou un ordinateur perso
+  DESIGN PATTERN V Un arrangement de modules / code réutilisable dans différents logiciels
+  ISTQB # Organisme de certification de tests de logiciels a l'international (International Software Testing Qualifications Board)
+  CFTL # Comité représentant de l'ISTQB certifiant les connaissances techniques et méthodologiques des testeurs de logiciels par des examens
+  SAAS V Service basé sur le cloud qui, au lieu d'être téléchargé et installé en local, peut être utilisé depuis un navigateur (Software As A Service)
+  CDN # Groupe de serveur qui accélèrent la diffusion de contenu web en étant plus proche de l'utilisateur que le serveur Web (Content Delivery Network). C'est juste un serveur de cache.
+  CRUD V Create, Update, Read, Delete
+  OOP # Programmation Orienté Objet (Object-Oriented Programming)
+  REGEX = V Régle d'Expression

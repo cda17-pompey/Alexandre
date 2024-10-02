@@ -1,0 +1,436 @@
+1) Écrivez un algorithme qui calcule la moyenne de trois nombres saisis par l'utilisateur
+
+Début
+
+    // Préparation des variables
+    // number1 : Premier nombre saisi par l'utilisateur.
+    // number2 : Deuxième nombre saisi par l'utilisateur.
+    // number3 : Troisième nombre saisi par l'utilisateur.
+    // moyenne : Variable pour stocker la moyenne des trois nombres.
+    Reel number1
+    Reel number2
+    Reel number3
+    Reel moyenne
+
+    // Demander à l'utilisateur de saisir le premier nombre
+    Ecrire "Veuillez entrer le premier nombre :"
+    Lire number1
+
+    // Demander à l'utilisateur de saisir le deuxième nombre
+    Ecrire "Veuillez entrer le deuxième nombre :"
+    Lire number2
+
+    // Demander à l'utilisateur de saisir le troisième nombre
+    Ecrire "Veuillez entrer le troisième nombre :"
+    Lire number3
+
+    // Calcul de la moyenne des trois nombres
+    // Formule : moyenne = (number1 + number2 + number3) / 3
+    moyenne <- (number1 + number2 + number3) / 3
+
+    // Réponse : Afficher la moyenne des trois nombres
+    Ecrire "La moyenne des trois nombres est : ", moyenne
+
+Fin
+
+2) Écrivez un algorithme qui convertit une température de Celsius en Fahrenheit
+
+Début
+
+    // Préparation des variables
+    // tempCelsius : Variable pour stocker la température saisie en degrés Celsius.
+    // tempFahrenheit : Variable pour stocker la température convertie en degrés Fahrenheit.
+    Reel tempCelsius
+    Reel tempFahrenheit
+
+    // Demander à l'utilisateur de saisir une température en degrés Celsius
+    Ecrire "Veuillez entrer la température en Celsius :"
+    Lire tempCelsius
+
+    // Conversion de la température de Celsius en Fahrenheit
+    // Formule : °F = (°C * 9/5) + 32
+    tempFahrenheit <- (tempCelsius * 9/5) + 32
+
+    // Réponse : Afficher la température convertie en Fahrenheit
+    Ecrire "La température en Fahrenheit est de : ", tempFahrenheit
+
+Fin
+
+3) Écrivez un algorithme qui demande à l'utilisateur de saisir un nombre entier et qui indique si ce nombre est pair ou impair
+
+Début
+
+    // Préparation des variables
+    // number1 : Le nombre entier saisi par l'utilisateur.
+    Entier number1
+
+    // Demander à l'utilisateur d'entrer un nombre entier
+    Ecrire "Veuillez entrer un nombre :"
+    Lire number1
+
+    // Vérification si le nombre est pair ou impair
+    Si (number1 mod 2 = 0) Alors
+        // Réponse : Si le reste de la division par 2 est 0, le nombre est pair
+        Ecrire "Le nombre est pair."
+    Sinon
+        // Réponse : Si le reste de la division par 2 n'est pas 0, le nombre est impair
+        Ecrire "Le nombre est impair."
+    Fin Si
+
+Fin
+
+
+4) Écrivez un algorithme qui calcule le factoriel d'un nombre entier positif saisi par l'utilisateur. Le factoriel de n (noté n!) est le produit des nombres entiers positifs de 1 à n
+
+Début
+
+    // Préparation des variables
+    // n : Nombre entier positif dont on veut calculer le factoriel.
+    // factoriel : Variable pour stocker le résultat du calcul du factoriel.
+    Entier n
+    Entier factoriel
+
+    // Initialiser factoriel à 1, car le factoriel de 0 est 1
+    factoriel <- 1
+
+    // Demander à l'utilisateur d'entrer un nombre entier positif
+    Ecrire "Entrer un nombre entier positif :"
+    Lire n
+
+    // Vérification si le nombre est négatif
+    Si n < 0 Alors
+        // Afficher un message d'erreur si le nombre est négatif
+        Ecrire "Le nombre doit être entier et positif"
+    Sinon
+        // Calcul du factoriel pour les nombres positifs
+        Pour i allant de 1 à n Faire
+            // Multiplier factoriel par i pour calculer le factoriel
+            factoriel <- factoriel * i
+        Fin Pour
+
+        // Réponse : Afficher le résultat du factoriel
+        Ecrire "Le factoriel de ", n, " est : ", factoriel
+    Fin Si
+
+Fin
+
+5) Écrivez un algorithme qui trouve le plus grand élément dans un tableau de 10 nombres entiers saisis par l'utilisateur
+
+Début
+
+    // Préparation des variables
+    // tableau : Tableau de 10 entiers dans lequel les nombres vont être stockés.
+    // max : Variable pour stocker la valeur maximale trouvée dans le tableau.
+    // i : Variable de contrôle pour les boucles.
+    Tableau Entier tableau[10]
+    Entier max
+    Entier i
+
+    // Lecture des 10 nombres entiers et remplissage du tableau
+    Pour i allant de 0 à 9 Faire
+        // Demander à l'utilisateur d'entrer un nombre entier
+        Ecrire "Veuillez entrer un nombre entier :"
+        // Lire le nombre saisi par l'utilisateur et le stocker dans le tableau à la position i
+        Lire tableau[i]
+    Fin Pour
+
+    // Initialiser la variable max avec le premier élément du tableau
+    max <- tableau[0]
+
+    // Parcourir le tableau à partir du deuxième élément pour trouver le maximum
+    Pour i allant de 1 à 9 Faire
+        // Si l'élément courant est supérieur à max, on met à jour max
+        Si tableau[i] > max Alors
+            max <- tableau[i]
+        Fin Si
+    Fin Pour
+
+    // Réponse : Afficher le plus grand élément trouvé dans le tableau
+    Ecrire "Le plus grand élément du tableau est : ", max
+
+Fin
+
+6) Écrivez un algorithme qui calcule et affiche les n premiers termes de la suite de Fibonacci, où n est saisi par l'utilisateur
+
+Début
+
+    // Préparation des variables
+    // n : Nombre de termes de la suite de Fibonacci à afficher.
+    // a : Le premier terme de la suite de Fibonacci (0).
+    // b : Le deuxième terme de la suite de Fibonacci (1).
+    // prochainTerme : Variable temporaire pour stocker le terme suivant de la suite.
+    Entier n
+    Entier a, b, prochainTerme
+
+    // Demande à l'utilisateur de saisir le nombre de termes à afficher
+    Ecrire "Entrer le nombre de termes à afficher :"
+    Lire n
+
+    // Initialisation des deux premiers termes de la suite de Fibonacci
+    a <- 0
+    b <- 1
+
+    // Vérification de la validité de n
+    Si n ≤ 0 Alors
+        // Affichage d'un message d'erreur si n est inférieur ou égal à 0
+        Ecrire "Le nombre de termes doit être supérieur à 0"
+    Sinon Si n = 1 Alors
+        // Si n est égal à 1, on affiche uniquement le premier terme de la suite
+        Ecrire a
+    Sinon Si n = 2 Alors
+        // Si n est égal à 2, on affiche les deux premiers termes de la suite
+        Ecrire a
+        Ecrire b
+    Sinon
+        // Affichage des deux premiers termes de la suite
+        Ecrire a
+        Ecrire b
+
+        // Calcul et affichage des termes suivants de la suite de Fibonacci
+        Pour i de 3 à n Faire
+            // Calcul du prochain terme de la suite
+            prochainTerme <- a + b
+            // Affichage du terme calculé
+            Ecrire prochainTerme
+            // Mise à jour des valeurs de a et b
+            a <- b
+            b <- prochainTerme
+        Fin Pour
+    Fin Si
+
+Fin
+
+7) Écrivez un algorithme qui vérifie si un nombre entier positif saisi par l'utilisateur est premier ou non
+
+Début
+
+    // Préparation des variables
+    // nombre : Le nombre entier saisi par l'utilisateur.
+    // i : Variable utilisée pour parcourir les diviseurs potentiels du nombre.
+    // estPremier : Booléen indiquant si le nombre est premier ou non.
+    Entier nombre, i
+    Booléen estPremier
+
+    // Demande à l'utilisateur de saisir un nombre entier positif
+    Ecrire "Entrez un nombre entier positif :"
+    Lire nombre
+
+    // Vérification si le nombre saisi est positif
+    Si nombre < 1 Alors
+        // Affichage d'un message d'erreur si le nombre n'est pas positif
+        Ecrire "C'est pas un nombre positif entier ce que tu m'as donné"
+    Sinon
+        // Initialisation de estPremier à Vrai, on suppose que le nombre est premier
+        estPremier <- Vrai
+
+        // Le nombre 1 n'est pas considéré comme un nombre premier
+        Si nombre = 1 Alors
+            estPremier <- Faux
+        Sinon
+            // Vérification des diviseurs de 2 à la racine carrée du nombre
+            Pour i de 2 à Racine(nombre) Faire
+                // Si nombre est divisible par i, alors il n'est pas premier
+                Si nombre mod i = 0 Alors
+                    estPremier <- Faux
+                    // Sortir de la boucle car on a trouvé un diviseur
+                    Sortir
+                Fin Si
+            Fin Pour
+        Fin Si
+
+        // Affichage du résultat
+        Si estPremier Alors
+            Ecrire nombre, " est un nombre premier"
+        Sinon
+            Ecrire nombre, " n'est pas un nombre premier"
+        Fin Si
+    Fin Si
+
+Fin
+
+8) Implémentez l'algorithme du tri à bulles pour trier un tableau de 10 nombres entiers dans l'ordre croissant
+
+Début
+
+    // Préparation des variables
+    // tableau : Tableau de 10 entiers dans lequel les nombres vont être stockés.
+    // i, j : Variables de contrôle pour les boucles.
+    // temporaire : Variable utilisée pour échanger des valeurs lors du tri.
+    Tableau Entier tableau[10]
+    Entier i, j, temporaire
+
+    // Lecture des 10 nombres entiers et remplissage du tableau
+    Pour i de 0 à 9 Faire
+        // Demander à l'utilisateur d'entrer un nombre entier
+        Ecrire "Entrer un nombre entier"
+        // Lire le nombre saisi par l'utilisateur et le stocker dans le tableau à la position i
+        Lire tableau[i]
+    Fin Pour
+
+    // Tri à bulles du tableau en ordre croissant
+    // Le tri consiste à comparer chaque élément avec le suivant et les échanger s'ils sont dans le mauvais ordre.
+    Pour i de 0 à 8 Faire
+        // Boucle pour comparer et trier les éléments du tableau
+        Pour j de 0 à 8 - i Faire
+            // Si l'élément courant est plus grand que le suivant, on les échange
+            Si tableau[j] > tableau[j + 1] Alors
+                // Utiliser la variable temporaire pour échanger les valeurs
+                temporaire <- tableau[j]
+                tableau[j] <- tableau[j + 1]
+                tableau[j + 1] <- temporaire
+            Fin Si
+        Fin Pour
+    Fin Pour
+
+    // Affichage du tableau trié en ordre croissant
+    Ecrire "Tableau dans l'ordre croissant et trié :"
+    Pour i de 0 à 9 Faire
+        // Afficher chaque élément du tableau
+        Ecrire tableau[i]
+    Fin Pour
+
+Fin
+
+9) Implémentez un algorithme qui gère un tiroir-caisse et optimise le rendu de monnaie
+
+Début
+
+    // Préparation des variables
+    // montantDu : Montant total dû par le client.
+    // montantDonne : Montant donné par le client pour payer.
+    // montantARendre : Montant à rendre au client (calculé comme la différence entre montantDonne et montantDu).
+    Reel montantDu, montantDonne, montantARendre
+
+    // Tableau contenant les différentes valeurs des billets et pièces disponibles dans le tiroir-caisse.
+    Tableau Reel tiroirCaisse = [100, 50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01]
+
+    // Tableau pour enregistrer le nombre de billets ou pièces de chaque valeur à rendre.
+    Tableau Entier rendu = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+    // Variable pour l'index de boucle.
+    Entier i
+
+    // Demande à l'utilisateur d'entrer le montant total dû.
+    Ecrire "Entrer le montant total dû :"
+    Lire montantDu
+
+    // Demande à l'utilisateur d'entrer le montant donné par le client.
+    Ecrire "Entrer le montant donné par le client :"
+    Lire montantDonne
+
+    // Calcul du montant à rendre au client.
+    montantARendre <- montantDonne - montantDu
+
+    // Vérification si le montant donné par le client est suffisant.
+    Si montantARendre < 0 Alors
+        // Le montant donné est inférieur au montant dû, afficher un message d'erreur.
+        Ecrire "Le montant donné est insuffisant"
+    Sinon Si montantARendre = 0 Alors
+        // Le montant donné est exactement égal au montant dû, pas de monnaie à rendre.
+        Ecrire "Pas de monnaie à rendre"
+    Sinon
+        // Rendu de la monnaie.
+        // Parcourir chaque type de billet/pièce du tiroir-caisse.
+        Pour i de 0 à Longueur(tiroirCaisse) - 1 Faire
+            // Tant que le montant à rendre est supérieur ou égal à la valeur du billet/pièce actuel.
+            Tant que montantARendre ≥ tiroirCaisse[i] Faire
+                // Soustraire la valeur du billet/pièce du montant à rendre.
+                montantARendre <- montantARendre - tiroirCaisse[i]
+                // Arrondir le montant à rendre pour éviter les problèmes de précision flottante.
+                montantARendre <- Arrondir(montantARendre, 2)
+                // Augmenter le compteur du nombre de billets/pièces de cette valeur à rendre.
+                rendu[i] <- rendu[i] + 1
+            Fin Tant
+        Fin Pour
+
+        // Afficher le rendu de la monnaie.
+        Ecrire "Rendu de monnaie optimal :"
+
+        // Affichage du nombre de billets et pièces de chaque type à rendre.
+        Pour i de 0 à Longueur(tiroirCaisse) - 1 Faire
+            // Si au moins un billet/pièce de cette valeur doit être rendu.
+            Si rendu[i] > 0 Alors
+                // Afficher la quantité de billets/pièces de cette valeur à rendre.
+                Ecrire rendu[i], " x ", tiroirCaisse[i], " €"
+            Fin Si
+        Fin Pour
+    Fin Si
+
+Fin
+
+9-bis)
+
+Début
+
+    // Préparation des variables
+    Reel montantDu, montantDonne, montantARendre
+    Tableau Reel tiroirCaisse = [500, 200, 100, 50, 20, 10, 2, 1, 0.5, 0.2, 0.1, 0.05]
+    Tableau Entier quantiteTiroir = [5, 5, 10, 10, 20, 20, 10, 50, 50, 100, 100, 100]
+    Tableau Entier quantiteDisponible = [1, 1, 1, 1, 2, 3, 5, 7, 10, 15, 20, 25]
+    Tableau Entier rendu = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] // Tableau pour le rendu de monnaie
+    Entier i
+
+    Ecrire "Entrer le montant total dû :"
+    Lire montantDu
+
+    Ecrire "Entrer le montant donné par le client :"
+    Lire montantDonne
+
+    montantARendre <- montantDonne - montantDu
+
+    Si montantARendre < 0 Alors
+        Ecrire "Le montant donné est insuffisant"
+    Sinon Si montantARendre = 0 Alors
+        Ecrire "Pas de monnaie à rendre"
+    Sinon
+        // Essayer de rendre la monnaie avec le tiroir-caisse seul
+        Pour i de 0 à Longueur(tiroirCaisse) - 1 Faire
+            Tant que montantARendre ≥ tiroirCaisse[i] et quantiteTiroir[i] > 0 Faire
+                montantARendre <- montantARendre - tiroirCaisse[i]
+                montantARendre <- Arrondir(montantARendre, 2)
+                rendu[i] <- rendu[i] + 1
+                quantiteTiroir[i] <- quantiteTiroir[i] - 1
+            Fin Tant
+        Fin Pour
+
+        // Si le tiroir-caisse n'a pas pu rendre la totalité de la monnaie
+        Si montantARendre > 0 Alors
+            // Compléter le rendu de monnaie avec le monnayeur si nécessaire
+            Pour i de 0 à Longueur(tiroirCaisse) - 1 Faire
+                Tant que montantARendre ≥ tiroirCaisse[i] et quantiteDisponible[i] > 0 Faire
+                    montantARendre <- montantARendre - tiroirCaisse[i]
+                    montantARendre <- Arrondir(montantARendre, 2)
+                    rendu[i] <- rendu[i] + 1
+                    quantiteDisponible[i] <- quantiteDisponible[i] - 1
+                Fin Tant
+            Fin Pour
+        Fin Si
+
+        // Vérification si tout le montant peut être rendu
+        Si montantARendre > 0 Alors
+            Ecrire "Impossible de rendre la monnaie exacte avec les billets et pièces disponibles"
+        Sinon
+            // Affichage du rendu de monnaie
+            Ecrire "Rendu de monnaie optimal :"
+            Pour i de 0 à Longueur(tiroirCaisse) - 1 Faire
+                Si rendu[i] > 0 Alors
+                    Ecrire rendu[i], " x ", tiroirCaisse[i], " €"
+                Fin Si
+            Fin Pour
+        Fin Si
+
+        // Rééquilibrage du tiroir-caisse avec le monnayeur pour garantir un stock suffisant
+        Pour i de 0 à Longueur(tiroirCaisse) - 1 Faire
+            // Si la quantité dans le tiroir-caisse est inférieure à un seuil (par exemple 5), on rééquilibre
+            Si quantiteTiroir[i] < 5 et quantiteDisponible[i] > 0 Alors
+                Différence <- 5 - quantiteTiroir[i]
+                Transfert <- Min(Différence, quantiteDisponible[i])
+                quantiteTiroir[i] <- quantiteTiroir[i] + Transfert
+                quantiteDisponible[i] <- quantiteDisponible[i] - Transfert
+
+                Ecrire "Transfert de", Transfert, " x ", tiroirCaisse[i], " € du monnayeur au tiroir-caisse"
+            Fin Si
+        Fin Pour
+    Fin Si
+
+Fin

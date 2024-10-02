@@ -1,0 +1,294 @@
+6-1)
+
+Debut
+
+    Tableau Entier tableau[7]
+
+    pour i de 0 a 6 Faire
+        tableau[i] <- 0
+    Fin Pour
+
+Fin
+
+6-2)
+
+Debut
+
+    Tableau String voyelles[6]
+
+    voyelles[0] <- "a"
+    voyelles[1] <- "e"
+    voyelles[2] <- "i"
+    voyelles[3] <- "o"
+    voyelles[4] <- "u"
+    voyelles[5] <- "y"
+
+Fin
+
+6-3)
+
+Debut
+
+    Tableau Entier notes[9]
+    Entier temp
+
+    Pour i de 0 a 8 Faire
+        Ecrire "Donnez moi une note :"
+        Lire temp
+
+        notes[i] <- temp
+    Fin Pour
+
+Fin
+
+6-4)
+
+Debut
+
+    Tableau Entier Nb[5]
+    Entier i
+
+    Pour i <- 0 a 5
+        Nb[i] <- i * i
+        Ecrire Nb[i]
+    i Suivant
+
+Fin
+
+6-5)
+
+Debut
+
+    Tableau Entier N[6]
+    Entier i
+ 
+    N[0] ← 1
+    Ecrire N[0]
+    Pour i ← 1 à 6 
+        N[i] ← N[i-1] + 2 
+        Ecrire N[i]
+    i suivant 
+
+Fin 
+
+6-6)
+
+L'algorithme calcule les premiers termes de la suite de Fibonacci jusqu'à Suite[7] et les affiche.
+
+Simplifié : 
+
+Début 
+
+    Tableau Entier Suite[7] 
+    Entier i 
+
+    Suite[0] ← 1 
+    Suite[1] ← 1 
+
+    Ecrire Suite[0]
+    Ecrire Suite[1]
+
+    Pour i ← 2 à 7 
+        Suite[i] ← Suite[i-1] + Suite[i-2] 
+        Ecrire Suite[i]
+    i suivant 
+
+Fin 
+
+6-7)
+
+Début
+
+    Tableau Entier notes[9]
+    Entier temp
+    Entier somme <- 0
+    Reel moyenne
+
+    Pour i de 0 à 8 Faire
+        Ecrire "Donnez moi une note :"
+        Lire temp
+        notes[i] <- temp
+    Fin Pour
+
+    Pour i de 0 à 8 Faire
+        somme <- somme + notes[i]
+    Fin Pour
+
+    moyenne <- somme / Longueur(notes)
+
+    Ecrire "La moyenne des notes est : ", moyenne
+
+Fin
+
+6-8)
+
+Debut
+
+    Tableau Entier valeurs[100]
+    Entier nbValeurs
+    Entier valeur
+    Entier nbPositives
+    Entier nbNegatives
+
+    Tant Que valeur != 0 Faire
+        Ecrire "Entrer une valeur (0 pour terminer)"
+        Lire valeur
+
+        Si valeur <> 0 Alors
+            valeurs[nbValeurs] <- valeur
+            nbValeurs <- nbValeurs + 1
+        Fin Si
+    FinTantQue
+
+    Pour i de 0 a nbValeurs - 1 Faire
+        Si valeurs[i] > 0 Alors
+            nbPositives <- nbPositives + 1
+        Sinon Si valeurs[i] < 0 Alors
+            nbNegatives <- nbNegatives + 1
+        Fin Si
+    Fin Pour
+
+    Ecrire "Nombres de valeurs positives : ", nbPositives
+    Ecrire "Nombres de valeurs négatives : ", nbNegatives
+
+Fin
+
+6-9)
+
+Debut
+
+    Tableau Entier valeurs[10]
+    Entier somme <- 0 
+
+    Pour i de 0 a 9 Faire
+        somme <- somme + valeurs[i]
+    Fin Pour
+
+Fin
+
+6-10)
+
+Debut
+
+    Tableau Entier tableau1[8]
+    Tableau Entier tableau2[8]
+    Tableau Entier tableau3[8]
+    Entier temp
+
+    Pour i de 0 a 7 Faire
+        temp <- tableau1[i] + tableau2[i]
+        tableau3[i] <- temp
+    Fin Pour
+
+Fin
+
+6-11)
+
+Début
+
+    Tableau Entier Tableau1[5]
+    Tableau Entier Tableau2[4]
+    Entier Schtroumpf <- 0
+    Entier i, j
+
+    Pour i de 0 à 4 Faire
+        Pour j de 0 à 2 Faire
+            Schtroumpf <- Schtroumpf + (Tableau1[i] * Tableau2[j])
+        Fin Pour
+    Fin Pour
+
+    Ecrire "Le Schtroumpf des deux tableaux est : ", Schtroumpf
+
+Fin
+
+6-12)
+
+Début
+
+    Tableau Entier valeurs[100]
+    Entier nbValeurs <- 0
+    Entier valeur <- -1  // Initialiser à une valeur différente de 0 pour entrer dans la boucle
+    Entier i
+
+    Tant Que valeur <> 0 Faire
+        Ecrire "Entrer une valeur (0 pour terminer) :"
+        Lire valeur
+
+        Si valeur <> 0 Alors
+            valeurs[nbValeurs] <- valeur
+            nbValeurs <- nbValeurs + 1
+        Fin Si
+    Fin TantQue
+
+    // Augmentation de chaque valeur de 1
+    Pour i de 0 à nbValeurs - 1 Faire
+        valeurs[i] <- valeurs[i] + 1
+    Fin Pour
+
+    Ecrire "Les nouvelles valeurs du tableau sont :"
+    Pour i de 0 à nbValeurs - 1 Faire
+        Ecrire "Valeur ", i + 1, " : ", valeurs[i]
+    Fin Pour
+
+Fin
+
+6-13)
+
+Debut
+
+    Tableau Entier tableau1[10]
+    Entier max
+    Entier position
+
+    Pour i de 0 a 8 Faire
+        Ecrire "Donnez moi un nombre"
+        Lire tableau1[i]
+    Fin Pour
+
+    max <- tableau1[0]
+    position <- 0
+
+    Pour i allant de 1 à 8 Faire
+        Si tableau1[i] > max Alors
+            max <- tableau1[i]
+            position <- i
+        Fin Si
+    Fin Pour
+
+    Ecrire "Le plus grand élément du tableau est : ", max, " et sa position est : ", position
+
+Fin
+
+6-14)
+
+Début 
+
+    Tableau Entier notes[100]
+    Entier nbNotes <- 0
+    Reel somme <- 0
+    Reel moyenne <- 0
+    Entier nbSuperieures <- 0
+    Reel note
+    Entier i
+
+    Tant Que note <> -1 Faire
+        Ecrire "Entrez une note (-1 pour terminer) :"
+        Lire note
+        Si note <> -1 Alors
+            notes[nbNotes] <- note
+            somme <- somme + note
+            nbNotes <- nbNotes + 1
+        Fin Si
+    Fin TantQue
+
+    moyenne <- somme / nbNotes
+
+    Pour i de 0 à nbNotes - 1 Faire
+        Si notes[i] > moyenne Alors
+            nbSuperieures <- nbSuperieures + 1
+        Fin Si
+    Fin Pour
+
+    Ecrire "Le nombre de notes supérieures à la moyenne de ", moyenne, " est : ", nbSuperieures
+
+Fin

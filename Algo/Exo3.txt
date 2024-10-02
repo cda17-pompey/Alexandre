@@ -1,0 +1,137 @@
+3-1)
+
+Debut
+
+    Reel Nombre
+
+    Ecrire "Veuillez entrer un nombre :"
+    Lire Nombre
+
+    Si Nombre > 0 Alors
+        Ecrire "Le nombre est positif"
+    Sinon
+        Ecrire "Le nombre n'est pas positif"
+    Fin Si
+
+Fin
+
+3-2)
+
+Debut
+
+    Reel Nombre1
+    Reel Nombre2
+
+    Ecrire "Veuillez entrer un premier nombre :"
+    Lire Nombre1
+
+    Ecrire "Veuillez enrer un deuxième nombre :"
+    Lire Nombre2
+
+    Si (Nombre1 > 0 et Nombre2 > 0) ou (Nombre1 < 0 et Nombre2 < 0) Alors
+        Ecrire "Le produit des deux nombres est positif"
+    Sinon
+        Ecrire "Le produit des deux nombres n'est pas positif"
+    Fin Si
+
+Fin
+
+3-3)
+
+Debut
+
+    Chaine Nom1
+    Chaine Nom2
+    Chaine Nom3
+
+    Ecrire "Veuillez entrer un premier nom :"
+    Lire Nom1
+
+    Ecrire "Veuillez entrer un deuxième nom :"
+    Lire Nom2
+
+    Ecrire "Veuillez entrer un troisième nom :"
+    Lire Nom3
+
+    Si (Nom1 <= Nom2) et (Nom2 <= Nom3) Alors
+        Ecrire "Les noms sont dans l'ordre alphabétique"
+    Sinon
+        Ecrire "Les noms ne sont pas dans l'ordre alphabétique"
+    Fin Si
+
+Fin
+
+3-4)
+
+Debut
+
+    Reel Nombre
+
+    Ecrire "Veuillez entrer un nombre :"
+    Lire Nombre
+
+    Si Nombre > 0 Alors
+        Ecrire "Le nombre est positif"
+    Sinon Si Nombre = 0 Alors
+        Ecrire "Le nombre est nul"
+    Sinon
+        Ecrire "Le nombre n'est pas positif"
+    Fin Si
+
+Fin
+
+3-5)
+
+Debut
+
+    Reel Nombre1
+    Reel Nombre2
+
+    Ecrire "Veuillez entrer un premier nombre :"
+    Lire Nombre1
+
+    Ecrire "Veuillez enrer un deuxième nombre :"
+    Lire Nombre2
+
+    Si Nombre1 = 0 ou Nombre2 = 0 Alors
+        Ecrire "Les deux produits sont nuls"
+    Sinon Si (Nombre1 > 0 et Nombre2 > 0) ou (Nombre1 < 0 et Nombre2 < 0) Alors
+        Ecrire "Le produit des deux nombres est positif"
+    Sinon
+        Ecrire "Le produit des deux nombres n'est pas positif"
+    Fin Si
+
+Fin
+
+3.6)
+
+Debut
+
+    Entier Age
+
+    Ecrire "Veuillez entrer l'âge de l'enfant :"
+    Lire Age
+
+    Si Age >= 6 et Age <= 7 Alors
+        Ecrire "L'enfant est dans la catégorie Poussin"
+    Sinon Si Age >= 8 et Age <= 9 Alors
+        Ecrire "L'enfant est dans la catégorie Pupille"
+    Sinon Si Age >= 10 et Age <= 11 Alors
+        Ecrire "L'enfant est dans la catégorie Minime"
+    Sinon Si Age >= 12 Alors
+        Ecrire "L'enfant est dans la catégorie Cadet"
+    Sinon Si Age < 6 Alors
+        Ecrire "L'enfant est trop jeune pour participer"
+    Sinon Si Age > 18 Alors
+        Ecrire "C'est plus un enfant la"
+    Fin Si
+
+Fin
+
+Oui, il y a 5 différents algorithmes utilisable : 
+
+- En utilisant les Sinon Si (Voir au-dessus)
+- En utilisant un Switch (Cas)
+- En utilisant des Booléens et des Flags
+- En utilisant des fonctions / procédures
+- En utilisant des tableaux d'âge / catégorie

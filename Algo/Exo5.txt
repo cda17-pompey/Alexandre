@@ -1,0 +1,277 @@
+5-1)
+
+Debut
+
+    Entier Nombre <- 0
+
+    TantQue Nombre < 1 et Nombre > 3 Faire
+        Ecrire "Donnez moi un nombre entre 1 et 3"
+        Lire Nombre
+    FinTantQue
+
+    Ecrire "Votre nombre est : ", Nombre
+
+Fin
+
+5-2)
+
+Debut
+
+    Entier Nombre <- 0
+
+    TantQue Nombre < 10 et Nombre > 20 Faire
+        Ecrire "Donnez moi un nombre entre 10 et 20"
+        Lire Nombre
+
+        Si Nombre > 20 Alors
+            Ecrire "Plus petit !"
+        Sinon Si Nombre < 10 Alors
+            Ecrire "Plus grand !"
+        Fin Si
+    FinTantQue
+
+    Ecrire "Votre nombre est : ", Nombre
+
+Fin
+
+5-3)
+
+Debut
+
+    Entier Nombre
+    Entier i <- 1
+
+    Ecrire "Donnez moi un nombre au hasard"
+    Lire Nombre
+
+    Ecrire "Votre nombre est : ", Nombre
+    TantQue i <= 10 Faire
+        Nombre <- Nombre + i
+        Ecrire "Petits pas : ", Nombre
+        i <- i + 1 
+    FinTantQue
+
+Fin
+
+5-4)
+
+Debut
+
+    Entier Nombre
+
+    Ecrire "Donnez moi un nombre au hasard"
+    Lire Nombre
+
+    Ecrire "Votre nombre est : ", Nombre
+    Pour i de 1 a 10 Faire
+        Nombre <- Nombre + i
+        Ecrire "Petits pas : ", Nombre
+    FinPour
+
+Fin
+
+5-5)
+
+Debut
+
+    Entier Nombre
+    Entier Temp
+
+    Ecrire "Donnez moi un nombre au hasard"
+    Lire Nombre
+
+    Ecrire "Voici la table de ", Nombre, " :"
+
+    Pour i de 1 a 10 Faire
+        Temp <- Nombre * i
+        Ecrire Nombre, " x ", i, " = ", Temp
+    FinPour
+Fin
+
+5-6)
+
+Début
+    Entier N <- 0
+    Entier Somme <- 0
+
+    Ecrire "Veuillez entrer un nombre :"
+    Lire N
+
+    Pour i de 1 à N Faire
+        Somme <- Somme + i
+    Fin Pour
+
+    Ecrire "La somme jusqu'à ", N, " est : ", Somme
+Fin
+
+5-7)
+
+Debut
+
+    Entier n
+    Entier factoriel
+
+    factoriel <- 1
+
+    Ecrire "Entrer un nombre :"
+    Lire n
+
+    Pour i allant de 1 à n Faire
+        factoriel <- factoriel * i
+    Fin Pour
+
+    Ecrire "Le factoriel de ", n, " est : ", factoriel
+
+Fin
+
+5-8)
+
+Debut
+
+    Entier Nombre
+    Entier Max
+    Entier Position
+
+    Pour i de 1 a 20 Faire
+        Ecrire "Veuillez entrer le nombre numéro ", i, " :"
+        Lire Nombre
+
+        Si Nombre > Max Alors
+            Max <- Nombre
+            Position <- i
+        Fin Si
+    Fin Pour
+
+    Ecrire "Le plus grand nombre est : ", max, ". Il est a la position : ", Position
+
+Fin
+
+5-9)
+
+Debut
+
+    Entier Nombre
+    Entier Max
+    Entier Position
+
+    Tant Que Nombre != 0 Faire
+        Ecrire "Veuillez entrer le nombre numéro ", i, " :"
+        Lire Nombre
+
+        Si Nombre > Max Alors
+            Max <- Nombre
+            Position <- i
+        Fin Si
+    FinTantQue
+
+    Ecrire "Le plus grand nombre est : ", max, ". Il est a la position : ", Position
+
+Fin
+
+5-10)
+
+Debut
+
+    Entier prix
+    Entier somme <- 0
+    Entier paiement
+    Entier monnaie_a_rendre
+    Entier nb_10, nb_5, nb_10
+
+    Tant Que prix <> 0 Faire
+        Ecrire "Entrer le prix de l'achat (0 pour terminer)"
+        Lire prix
+        somme <- somme + prix
+    FinTantQue
+
+    Ecrire "La somme total est de : ", somme
+
+    Ecrire "Entrez le montant payé :"
+    Lire paiement
+
+    monnaie_a_rendre <- paiement - somme
+
+    Si monnaie_a_rendre < 0 Alors
+        Ecrire "Le montant payé est insuffisant"
+    Sinon
+        nb_10 <- monnaie_a_rendre/10
+        monnaie_a_rendre <- monnaie_a_rendre % 10
+        nb_5 <- monnaie_a_rendre / 5
+        monnaie_a_rendre <- monnaie_a_rendre % 5
+        nb_1 <- monnaie_a_rendre
+
+        Si nb_10 > 0 Alors
+            Ecrire nb_10, " x 10 Euros"
+        Fin Si
+
+        Si nb_5 > 0 Alors
+            Ecrire nb_5, " x 5 Euros"
+        Fin Si
+
+        Si nb_1 > 0 Alors
+            Ecrire nb_1, " x 1 Euros"
+        Fin Si
+    Fin Si
+
+Fin
+
+5-11)
+
+Début
+    Entier n // nombre de chevaux partants
+    Entier p // nombre de chevaux joués
+    Réel X // Chances de gagner dans l'ordre
+    Réel Y // Chances de gagner dans le désordre
+
+    Fonction Factorielle(x)
+        Si x = 0 ou x = 1 Alors
+            Retourner 1
+        Sinon
+            Réel resultat <- 1
+            Pour i de 1 à x Faire
+                resultat <- resultat * i
+            Fin Pour
+            Retourner resultat
+        Fin Si
+    Fin Fonction
+
+    Ecrire "Veuillez entrer le nombre de chevaux partants :"
+    Lire n
+
+    Ecrire "Veuillez entrer le nombre de chevaux joués :"
+    Lire p
+
+    X <- Factorielle(n) / Factorielle(n - p)
+
+    Y <- Factorielle(n) / (Factorielle(p) * Factorielle(n - p))
+
+    Ecrire "Dans l'ordre : une chance sur ", X, " de gagner."
+    Ecrire "Dans le désordre : une chance sur ", Y, " de gagner."
+
+Fin
+
+Le souci vient du calcul des factoriels avec des grands nombres.
+
+ébut
+    Entier n, p
+    Réel X, Y
+
+    Afficher "Veuillez entrer le nombre de chevaux partants :"
+    Lire n
+
+    Afficher "Veuillez entrer le nombre de chevaux joués :"
+    Lire p
+
+    X <- 1
+    Pour i de 0 à p - 1 Faire
+        X <- X * (n - i)
+    Fin Pour
+
+    Y <- X
+    Pour i de 1 à p Faire
+        Y <- Y / i
+    Fin Pour
+
+    Afficher "Dans l'ordre : une chance sur ", X, " de gagner."
+    Afficher "Dans le désordre : une chance sur ", Y, " de gagner."
+Fin

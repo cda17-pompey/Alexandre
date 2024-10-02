@@ -1,0 +1,277 @@
+4.1)
+
+Début
+    Si (Tutu <= Toto + 4) ET (Tata ≠ "OK") Alors
+        Tutu ← Tutu - 1
+    Sinon
+        Tutu ← Tutu + 1
+    Fin Si
+Fin
+
+4.2)
+
+Debut
+
+    Entier Heure
+    Entier Minutes
+
+    Ecrire "Veuillez entrer l'heure (entre 0 et 23)"
+    Lire Heure
+
+    Ecrire "Veuillez entrer les minutes (entre 0 et 59)"
+    Lire Minutes
+
+    Minutes <- Minutes + 1
+
+    Si Minutes = 60 Alors
+        Minutes <- 0
+        Heure <- Heure + 1
+    Fin Si
+
+    Si Heure = 24 Alors
+        Heure <- 0
+    Fin Si
+
+    Ecrire "Dans une minute, il sera ", Heure, " heures ", Minutes, "."
+
+Fin
+
+4.3)
+
+Debut
+
+    Entier Heure
+    Entier Minutes
+    Entier Secondes
+
+    Ecrire "Veuillez entrer l'heure (entre 0 et 23)"
+    Lire Heure
+
+    Ecrire "Veuillez entrer les minutes (entre 0 et 59)"
+    Lire Minutes
+
+    Ecrire "Veuillez entrer les secondes (entre 0 et 59)"
+    Lire Secondes
+
+    Secondes <- Secondes + 1
+
+    Si Secondes = 60 Alors
+        Secondes <- 0
+        Minutes <- Minutes + 1
+    Fin Si
+
+    Si Minutes = 60 Alors
+        Minutes <- 0
+        Heure <- Heure + 1
+    Fin Si
+
+    Si Heure = 24 Alors
+        Heure <- 0
+    Fin Si
+
+    Ecrire "Dans une minute, il sera ", Heure, " heures ", Minutes, " et ", Secondes, " secondes."
+
+Fin
+
+4-4)
+
+Debut
+
+    Entier NombrePhotocopie
+    Reel Facture
+
+    Ecrire "Veuillez entrer le nombre de photocopies :"
+    Lire NombrePhotocopie
+
+    Si NombrePhotocopie <= 10 Alors
+        Facture <- NombrePhotocopie * 0.10
+    Sinon Si NombrePhotocopie <= 30 Alors
+        Facture <- 10 * 0.10 + (NombrePhotocopie - 10) * 0.09
+    Sinon
+        Facture <- 10 * 0.10 + 20 * 0.09 + (NombrePhotocopie - 30) * 0.08
+    Fin Si
+
+    Ecrire "Le cout total des photocopies est de : ", Facture, " euros"
+
+Fin
+
+4-5)
+
+Debut
+
+    Entier Age
+    Booléen Homme
+    Booléen Femme
+
+    Ecrire "Veuillez entre votre âge :"
+    Lire Age
+
+    Si Homme = Vrai et Age > 20 Alors
+        Ecrire "Tu paye !"
+    Sinon
+        Ecrire "Tu paye pas !"
+    Fin Si
+
+    Si Femme = Vrai et (Age >= 18 et Age <= 35) Alors
+        Ecrire "Tu paye !"
+    Sinon
+        Ecrire "Tu paye pas !"
+    Fin Si
+
+Fin
+
+4.6)
+
+Debut
+
+    Reel ScoreCandidat1
+    Reel ScoreCandidat2
+    Reel ScoreCandidat3
+    Reel ScoreCandidat4
+
+    Ecrire "Veuillez entrer le score du candidat 1 :"
+    Lire ScoreCandidat1
+
+    Ecrire "Veuillez entrer le score du candidat 2 :"
+    Lire ScoreCandidat2
+
+    Ecrire "Veuillez entrer le score du candidat 3 :"
+    Lire ScoreCandidat3
+
+    Ecrire "Veuillez entrer le score du candidat 4 :"
+    Lire ScoreCandidat4
+
+    Si ScoreCandidat1 > 50 Alors
+        Ecrire "Le candidat 1 est élu des le premier tour !"
+    Sinon
+        Si ScoreCandidat1 >= 12.5 Alors
+            Si ScoreCandidat1 > ScoreCandidat2 et ScoreCandidat1 > ScoreCandidat3 et ScoreCandidat1 > ScoreCandidat4 Alors
+                Ecrire "Le candidat 1 est en ballotage favorable"
+            Sinon
+                Ecrire "Le candidat 1 est en ballotage défavorable"
+            Fin Si
+        Sinon
+            Ecrire "Le candidat 1 est battu"
+        Fin Si
+    Fin Si
+
+Fin
+
+4.7)
+
+Debut
+
+    Entier Age
+    Entier Ancienneté
+    Entier NombreAccident
+    Booléen Fidélité
+    Chaine Tarif
+
+    Ecrire "Entrez l'âge :"
+    Lire Age
+
+    Ecrire "Entrer l'Ancienneté :"
+    Lire Ancienneté
+
+    Ecrire "Entrer le nombre d'accidents :"
+    Lire NombreAccident
+
+    Si Age < 25 Alors
+        Si Ancienneté < 2 Alors
+            Si NombreAccident = 0 Alors
+                Tarif <- "Rouge"
+            Sinon
+                Ecrire "Refus d'Assurance"
+                Fin
+            Fin Si
+        Sinon
+            Si NombreAccident = 0 Alors
+                Tarif <- "Orange"
+            Sinon Si NombreAccident = 1 Alors
+                Tarif <- "Rouge"
+            Sinon
+                Ecrire "Refus d'Assurance"
+                Fin
+            Fin Si
+        Fin Si
+    Sinon
+        Si Ancienneté < 2 Alors
+            Si NombreAccident = 0 Alors
+                Tarif <- "Rouge"
+            Sinon
+                Ecrire "Refus d'Assurance"
+                Fin
+            Fin Si
+        Sinon
+            Si NombreAccident = 0 Alors
+                Tarif <- "Vert"
+            Sinon Si NombreAccident = 1 Alors
+                Tarif <- "Orange"
+            Sinon Si NombreAccident = 2 Alors
+                Tarif <- "Rouge"
+            Sinon
+                Ecrire "Refus d'Assurance"
+                Fin
+            Fin Si
+        Fin Si
+    Fin Si
+
+    Si Fidélité Alors
+        Si Tarif = "Rouge" Alors
+            Tarif <- "Orange"
+        Sinon Si Tarif = "Orange" Alors
+            Tarif <- "Vert"
+        Fin Si
+    Fin Si
+
+    Ecrire "Le tarif est : ", Tarif
+
+Fin
+
+4.8)
+
+Debut
+
+    Entier Jour, Mois, Année
+    Booléen EstBissextile, DateValide
+
+    Ecrire "Veuillez entrer le jour :"
+    Lire Jour
+
+    Ecrire "Veuillez entrer le mois :"
+    Lire Mois
+
+    Ecrire "Veuillez entrer l'année :"
+    Lire Année
+
+    Si (Année dp 4) et ((Année dp 100) non) ou (Année dp 400) Alors
+        EstBissextile <- Vrai
+    Sinon
+        EstBissextile <- Faux
+    Fin Si
+
+    Si Mois < 1 ou Mois > 12 Alors
+        DateValide <- Faux
+    Fin Si
+
+    Si DateValide Alors
+        Si Mois = 2 Alors
+            Si EstBissextile et Jour = 29 Alors
+                DateValide <- Faux
+            Sinon Si non EstBissextile et Jour > 28 Alors
+                DateValide <- Faux
+            Fin Si
+        Sinon
+            Si Jour > 31 Alors
+                DateValide <- Faux
+            Fin Si
+        Fin Si
+    Fin Si
+
+    Si DateValide Alors
+        Ecrire "La date est valide"
+    Sinon
+        Ecrire "La date est invalide"
+    Fin Si
+    
+Fin

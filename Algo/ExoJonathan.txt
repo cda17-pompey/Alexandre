@@ -1,0 +1,141 @@
+Problèmatique : Étant donné deux chaînes de caractères, A et B,  la tâche est de déterminer la longueur de la plus longue sous-chaîne commune entre ces deux chaînes. 
+Une sous-chaîne est une séquence de caractères qui apparaît consécutivement dans une chaîne.
+
+Début
+
+    // Déclaration des variables
+    Chaine A  // Première chaîne de caractères
+    Chaine B  // Deuxième chaîne de caractères
+    Entier LongueurMax  // Pour garder la plus grande longueur de sous-chaîne commune trouvée
+    Entier N  // La longueur de la chaîne A
+    Entier M  // La longueur de la chaîne B
+    Liste chaîne SousChaines  // Pour stocker toutes les plus longues sous-chaînes trouvées
+
+    // Fonction qui trouve la plus longue sous-chaîne commune
+    Fonction LongestSubstringChain(A, B)
+        LongueurMax <- 0  // Initialiser LongueurMax à zéro
+        N <- Longueur(A)  // Calculer la longueur de la chaîne A
+        M <- Longueur(B)  // Calculer la longueur de la chaîne B
+
+        // Initialisation des tableaux qui vont nous aider
+        Tableau Entier Table[N + 1][M + 1]  // Tableau pour stocker les longueurs de sous-chaînes
+        SousChaines <- ListeVide()  // Initialiser la liste des sous-chaînes
+
+        // Initialiser tout le tableau à zéro
+        Pour i de 0 à N Faire
+            Pour j de 0 à M Faire
+                Table[i][j] <- 0  // Mettre chaque case du tableau à 0
+            Fin Pour
+        Fin Pour
+
+        // Parcourir chaque lettre des deux chaînes
+        Pour i de 1 à N Faire
+            Pour j de 1 à M Faire
+                Si A[i - 1] = B[j - 1] Alors
+                    // Ajouter 1 à la longueur de la sous-chaîne trouvée jusqu'ici
+                    Table[i][j] <- Table[i - 1][j - 1] + 1
+                    Si Table[i][j] > LongueurMax Alors
+                        // Nouvelle plus longue sous-chaîne trouvée
+                        LongueurMax <- Table[i][j]
+                        SousChaines <- ListeVide()  // Réinitialiser la liste des sous-chaînes
+                        Ajouter(SousChaines, SousChaine(A, i - LongueurMax, LongueurMax))
+                    Sinon Si Table[i][j] = LongueurMax Alors
+                        // Une autre sous-chaîne de même longueur trouvée
+                        Ajouter(SousChaines, SousChaine(A, i - LongueurMax, LongueurMax))
+                    Fin Si
+                Sinon
+                    Table[i][j] <- 0 // Si les lettres ne sont pas les mêmes, remettre à zéro
+                Fin Si
+            Fin Pour
+        Fin Pour
+
+        // Afficher toutes les plus longues sous-chaînes trouvées
+        Si LongueurMax > 0 Alors
+            Ecrire "Les plus longues sous-chaînes communes sont : "
+            Pour Chaque sousChaine dans SousChaines Faire
+                Ecrire sousChaine
+            Fin Pour
+        Sinon
+            Ecrire "Aucune sous-chaîne commune trouvée."
+        Fin Si
+
+        // Retourner la plus grande longueur de sous-chaîne commune trouvée
+        Retourner LongueurMax
+
+    Fin Fonction
+
+    Ecrire "Donnez-moi une première chaîne de caractère"
+    Lire A
+
+    Ecrire "Et maintenant une deuxième"
+    Lire B
+
+    LongueurMax <- LongestSubstringChain(A, B)
+
+    Ecrire "La longueur de la plus longue sous-chaîne commune est : ", LongueurMax
+
+Fin
+
+Problèmatique : imagine un groupe de 10 personnes qui ont chacune un niveau assigné entre 0 et 10.
+Ecris un algorithme qui demande combien d'équipes sont à créer et qui répartit les personnes dans les groupes pour que la moyenne du niveau de chaque groupe soit équilibrée.
+
+Debut
+
+    // Déclaration des variables
+    Entier nb_equipes  // Nombre d'équipes à créer
+    Entier nb_personnes  // Nombre de personnes dans le groupe
+    Entier niveau  // Niveau de chaque personne
+    Entier i, j  // Variables de boucle
+    Liste Entier niveaux  // Liste des niveaux des personnes
+    Liste Liste Entier equipes  // Liste de listes pour les équipes
+    Liste Entier somme_equipes  // Liste des sommes des niveaux par équipe
+
+    // Initialiser le nombre de personnes
+    Ecrire "Combien de personnes voulez-vous ?"
+    Lire nb_personnes
+    
+    niveaux <- ListeVide()
+
+    // Demander à l'utilisateur d'entrer le niveau de chaque personne
+    Pour i de 1 à nb_personnes Faire
+        Ecrire "Entrez le niveau de la personne ", i, " (entre 0 et 10) :"
+        Lire niveau
+        Ajouter(niveaux, niveau)
+    Fin Pour
+
+    // Demander le nombre d'équipes à créer
+    Ecrire "Combien d'équipes voulez-vous créer ?"
+    Lire nb_equipes
+
+    // Initialiser les équipes avec des listes vides
+    equipes <- ListeVide()
+    somme_equipes <- ListeVide()
+    Pour i de 1 à nb_equipes Faire
+        Ajouter(equipes, ListeVide())
+        Ajouter(somme_equipes, 0)  // Initialiser les sommes à zéro
+    Fin Pour
+
+    // Trier les niveaux par ordre décroissant
+    TrierDecroissant(niveaux)
+
+    // Répartir les personnes dans les équipes de manière équilibrée
+    Pour i de 0 à nb_personnes - 1 Faire
+        // Trouver l'équipe avec la somme de niveaux la plus faible
+        index_min <- 0
+        Pour j de 1 à nb_equipes - 1 Faire
+            Si somme_equipes[j] < somme_equipes[index_min] Alors
+                index_min <- j
+            Fin Si
+        Fin Pour
+
+        // Ajouter le niveau à l'équipe trouvée
+        Ajouter(equipes[index_min], niveaux[i])
+        somme_equipes[index_min] <- somme_equipes[index_min] + niveaux[i]
+    Fin Pour
+
+    // Afficher la répartition des équipes
+    Pour i de 0 à nb_equipes - 1 Faire
+        Ecrire "Équipe ", i + 1, ": ", equipes[i], " - Somme des niveaux : ", somme_equipes[i]
+    Fin Pour
+
+Fin
