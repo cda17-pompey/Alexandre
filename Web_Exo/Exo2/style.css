@@ -15,9 +15,27 @@ header {
 }
 
 h1 {
-    color: white;
     font-size: 1.8em;
     margin: 0;
+    background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+    text-align: center;
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 24px;
+    animation: rainbow 8s ease infinite;
+}
+
+@keyframes rainbow {
+    0%{
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 25%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
 }
 
 /* Main content */
@@ -51,8 +69,20 @@ main {
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    animation: rotateCard 1s ease-in-out;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes rotateCard {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 /* Card media styles */
@@ -220,4 +250,102 @@ footer {
         font-size: 1.2em;
         padding: 12px 25px;
     }
+}
+
+
+/* Styles pour les stickmen */
+.stickman {
+    position: absolute;
+    width: 20px;
+    height: 60px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tête */
+.stickman::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    display: block;
+}
+
+/* Corps */
+.stickman::after {
+    content: '';
+    width: 3px;
+    height: 40px;
+    background-color: black;
+    display: block;
+}
+
+/* Bras et jambes */
+.stickman.left-stickman::before,
+.stickman.right-stickman::before {
+    position: absolute;
+    top: 22px;
+    height: 2px;
+    background-color: black;
+    width: 30px; /* Longueur des bras */
+}
+
+.stickman.left-stickman::after,
+.stickman.right-stickman::after {
+    position: absolute;
+    bottom: 0;
+    width: 3px;
+    height: 30px;
+    background-color: black;
+}
+
+/* Position des stickmen au départ */
+.stickman.left-stickman {
+    left: 0;
+    bottom: 0;
+    animation: moveLeftToForm 5s forwards, climbForm 3s 5s forwards;
+}
+
+.stickman.right-stickman {
+    right: 0;
+    bottom: 0;
+    animation: moveRightToForm 5s forwards, climbForm 3s 5s forwards;
+}
+
+/* Animation de déplacement vers le formulaire */
+@keyframes moveLeftToForm {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(400px); /* Ajuste selon la largeur de ta page */
+    }
+}
+
+@keyframes moveRightToForm {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-400px); /* Ajuste selon la largeur de ta page */
+    }
+}
+
+/* Animation d'escalade sur le formulaire */
+@keyframes climbForm {
+    0% {
+        bottom: 0;
+    }
+    100% {
+        bottom: 300px; /* Ajuste selon la hauteur de ton formulaire */
+    }
+}
+
+/* Positionnement des autres éléments */
+.form-section {
+    position: relative;
+    margin-top: 100px;
 }
