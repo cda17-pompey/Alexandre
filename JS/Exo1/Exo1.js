@@ -1,7 +1,7 @@
 /**
  * Calcule la somme des nombres pairs de 1 a N
  * @param { Number } N
- * @return { Number }
+ * @return { String }
 */
 function calculPair(N) {
 
@@ -16,31 +16,33 @@ function calculPair(N) {
             
             //Si i divisé par 2 est égale a 0
             if (i % 2 == 0) {
-                pair = pair + i
-                console.log(pair)
-            } else {
-                console.log('pas pair')
+                pair = pair + i;
             }
             
         }
         
         //On renvoi la valeur pair a la fin de la fonction
-        return pair
+        console.log("La somme des nombres pairs de " + N + " est : " + pair);
 
     //Sinon on lui indique que c'est pas un nombre
     } else {
 
-        console.log('C\'est pas un nombre')
+        console.log("Le paramètre n'est pas un nombre");
     }
 }
+
+calculPair(10);
 
 /**
  * Vérifie si une chaine de caractère est un Palindrome
  * @param { String } string
- * @return { Boolean }
+ * @return { String }
 */
 function checkStringPalindrome(string) {
 
+    if(typeof string !== 'string'){
+        console.log("Le paramètre n'est pas une chaine de caractère");
+    }
     //On vérifie que la chaine est en minuscule, puis on dégage tout les types de caractères qui ne sont pas dans l'alphabet (Nombres, caractères spécials, etc..)
     let clearString = string.toLowerCase().replace(/[^a-z0-9]/g, '');
 
@@ -48,31 +50,41 @@ function checkStringPalindrome(string) {
     let reversedString = clearString.split('').reverse().join('');
 
     if (clearString === reversedString) {
-        return true; // C'est un palindrome
+        console.log("C'est bien un palindrome"); // C'est un palindrome
     } else {
-        return false; // Ce n'est pas un palindrome
+        console.log("Ce n'est pas un palindrome"); // Ce n'est pas un palindrome
     }
 }
 
+checkStringPalindrome('radar');
 
 /**
  * Vérifie si deux chaines de caractères sont des anagrammes
  * @param { String } string1
  * @param { String } string2
- * @return { Boolean }
+ * @return { String }
 */
-function checkStringsAnagramme(string1, string2){
+function checkStringsAnagramme(string1, string2) {
 
-    //Si la première chaine de caractère n'est pas a la même taille que la deuxième chaine de caractère
-    //On renvoi false (faux)
-    if (string1.length !== string2.length) {
-        return false;
+    if (typeof string1 !== 'string' || typeof string2 !== 'string') {
+        console.log("L'un des deux paramètres n'est pas une chaîne de caractères");
     }
-    
+
+    // Si les chaînes n'ont pas la même longueur, elles ne peuvent pas être des anagrammes
+    if (string1.length !== string2.length) {
+        console.log("Les deux paramètres n'ont pas la même longueur");
+    }
+
     // Convertir les chaînes en tableaux de caractères, les trier et les comparer
     const string1Fold = string1.split('').sort().join('');
     const string2Fold = string2.split('').sort().join('');
-    
-    //On renvoi True (vrai)
-    return string1Fold === string2Fold;
+
+    // Comparer les chaînes triées
+    if (string1Fold === string2Fold) {
+        console.log('Les deux chaînes de caractères sont des anagrammes');
+    } else {
+        console.log('Les deux chaînes de caractères ne sont pas des anagrammes');
+    }
 }
+
+checkStringsAnagramme('polyandre', 'coriandre');
