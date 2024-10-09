@@ -11,8 +11,8 @@ function calculPair(N) {
         //Variable pair pour stocker la somme
         let pair = 0;
         
-        //Pour i (1), SI i est inférieur ou égal a N, I + 1
-        for (let i = 1; i <= N; i++) {
+        //Pour i (0), SI i est inférieur ou égal a N, I + 1
+        for (let i = 0; i <= N; i++) {
             
             //Si i divisé par 2 est égale a 0
             if (i % 2 == 0) {
