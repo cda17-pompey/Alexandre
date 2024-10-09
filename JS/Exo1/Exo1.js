@@ -1,32 +1,40 @@
+
+
 /**
  * Calcule la somme des nombres pairs de 1 a N
  * @param { Number } N
  * @return { String }
 */
 function calculPair(N) {
-
-    //On vérifie si N (ce qui a été donné par l'utilisateur) est bien un nombre
-    if (typeof N == "number") {
-
-        //Variable pair pour stocker la somme
+    // Vérifier si N est bien un nombre
+    if (typeof N === "number") {
+        
+        // Variable pour stocker la somme des nombres pairs
         let pair = 0;
-        
-        //Pour i (0), SI i est inférieur ou égal a N, I + 1
-        for (let i = 0; i <= N; i++) {
-            
-            //Si i divisé par 2 est égale a 0
-            if (i % 2 == 0) {
-                pair = pair + i;
+        let i = 2;
+
+        // Si N est plus grand ou égal à i (qui est 2)
+        if (N >= i) {
+
+            // Boucle de i jusqu'à N, avec incrémentation de i
+            for (; i <= N; i++) {
+
+                // Si i est un nombre pair
+                if (i % 2 === 0) {
+                    pair = pair + i;
+                }
             }
-            
+
+            // Affiche la somme des nombres pairs
+            console.log("La somme des nombres pairs de " + N + " est : " + pair);
+
+        } else {
+            // Si N est plus petit que 2
+            console.log('Le paramètre est plus petit que la boucle (N est inférieur à 2)');
         }
-        
-        //On renvoi la valeur pair a la fin de la fonction
-        console.log("La somme des nombres pairs de " + N + " est : " + pair);
 
-    //Sinon on lui indique que c'est pas un nombre
     } else {
-
+        // Si le paramètre n'est pas un nombre
         console.log("Le paramètre n'est pas un nombre");
     }
 }
@@ -40,7 +48,7 @@ calculPair(10);
 */
 function checkStringPalindrome(string) {
 
-    if(typeof string !== 'string'){
+    if (typeof string !== 'string') {
         console.log("Le paramètre n'est pas une chaine de caractère");
     }
     //On vérifie que la chaine est en minuscule, puis on dégage tout les types de caractères qui ne sont pas dans l'alphabet (Nombres, caractères spécials, etc..)
@@ -87,4 +95,32 @@ function checkStringsAnagramme(string1, string2) {
     }
 }
 
-checkStringsAnagramme('polyandre', 'coriandre');
+checkStringsAnagramme('ABC', 'BAC');
+
+/**
+ * Une fonction qui sert de petit jeu (trop petit ou trop grand)
+ * @return { Alert }
+*/
+function moreOrLess() {
+    let input = prompt("Donne moi un nombre");
+    let numberToHave = 24;
+
+    while (input !== null) {  // Si l'utilisateur n'a pas cliqué sur Annuler
+        let number = parseInt(input);
+
+        if (number < numberToHave) {
+            input = prompt("Trop petit, donne moi en un autre");
+        } else if (number > numberToHave) {
+            input = prompt("Trop grand, donne m'en un autre !");
+        } else {
+            alert("Félicitations ! Le nombre était bien 24 !");
+            break;
+        }
+    }
+
+    if (input === null) {
+        alert("Partie annulée.");
+    }
+}
+
+moreOrLess();
