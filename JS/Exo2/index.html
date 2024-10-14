@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/index.css">
     <title>Document</title>
 </head>
@@ -11,13 +12,14 @@
 <body>
     <!-- En-tête -->
     <header>
-        <h1>Forum DayZ</h1>
+        <h1>Dayz Armada</h1>
         <nav>
             <ul>
                 <li><a href="#discussions">Discussions Générales</a></li>
                 <li><a href="#guides">Astuces et Guides</a></li>
                 <li><a href="#survie">Survie et Événements</a></li>
             </ul>
+            <input type="text" id="search-bar" placeholder="Rechercher un post...">
         </nav>
     </header>
 
@@ -83,8 +85,7 @@
                 <img src="assets/img/profile4.jpg" alt="PDP créateur">
                 <div class="post-content">
                     <h3 class="post-title">Événement de survie à venir</h3>
-                    <p class="post-description">Participez à un événement de survie avec des joueurs du monde entier.
-                    </p>
+                    <p class="post-description">Participez à un événement de survie avec des joueurs du monde entier.</p>
                     <div class="post-details">
                         <span>Date de création : 1 octobre 2024</span>
                         <span>Créateur : Mike Johnson</span>
@@ -97,11 +98,24 @@
         </section>
     </main>
 
+    <!-- Fenêtre modale unique pour afficher les détails de chaque post -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modal-title">Titre du post</h3>
+            <p id="modal-description">Description complète du post...</p>
+            <p id="modal-details">Détails supplémentaires : date, créateur, likes...</p>
+        </div>
+    </div>
+
     <!-- Pied de page -->
     <footer>
-        <p>© 2024 DayZ Server. Tous droits réservés.</p>
+        <p>© 2024 Dayz Armada. Tous droits réservés.</p>
     </footer>
+
+    <!-- Fichier JavaScript externe -->
+    <script src="assets/js/index.js"></script>
+
 </body>
-<script src="assets/js/index.js"></script>
 
 </html>

@@ -4,7 +4,7 @@ body {
     padding: 0;
     font-family: 'Arial', sans-serif;
     background: url('../img/b.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background-size: cover; /* L'image de fond couvre toute la page */
     color: #f0f0f0;
 }
 
@@ -14,10 +14,20 @@ header {
     text-align: center;
 }
 
+/* Animation pour le titre du forum */
 h1 {
     font-size: 4rem;
     color: #e74c3c;
     margin: 0;
+    opacity: 0; /* Caché au début */
+    transform: translateY(-50px); /* Décalé vers le haut */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Animation */
+}
+
+/* Quand la classe "show" est ajoutée via JavaScript */
+h1.show {
+    opacity: 1;
+    transform: translateY(0); /* Le titre revient à sa position */
 }
 
 nav ul {
@@ -28,10 +38,7 @@ nav ul {
     margin-top: 20px;
 }
 
-nav ul li {
-    margin: 0 15px;
-}
-
+/* Style des liens de navigation */
 nav ul li a {
     color: #f0f0f0;
     text-decoration: none;
@@ -42,8 +49,19 @@ nav ul li a {
     transition: background-color 0.3s ease;
 }
 
+/* Effet au survol des liens */
 nav ul li a:hover {
     background-color: rgba(231, 76, 60, 1);
+}
+
+#search-bar {
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 /* Section principale avec les discussions */
@@ -53,6 +71,7 @@ main {
     padding: 0 20px;
 }
 
+/* Section pour chaque catégorie */
 .section {
     margin-bottom: 50px;
 }
@@ -64,6 +83,7 @@ main {
     padding-bottom: 10px;
 }
 
+/* Style de chaque post */
 .post {
     display: flex;
     align-items: center;
@@ -71,12 +91,21 @@ main {
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 10px;
+    opacity: 0;
+    transform: translateY(50px); /* Légèrement décalé en bas */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animation d'apparition */
 }
 
+.post.visible {
+    opacity: 1;
+    transform: translateY(0); /* Le post remonte et devient visible */
+}
+
+/* Style des images de profil */
 .post img {
     width: 60px;
     height: 60px;
-    border-radius: 50%;
+    border-radius: 50%; /* Rondes */
     margin-right: 20px;
 }
 
@@ -90,12 +119,14 @@ main {
     margin: 0;
 }
 
+/* Style de la description des posts */
 .post-description {
     font-size: 1rem;
     color: #ccc;
     margin: 5px 0;
 }
 
+/* Détails sous les posts */
 .post-details {
     font-size: 0.8rem;
     color: #aaa;
@@ -103,18 +134,45 @@ main {
     justify-content: space-between;
 }
 
-.post-details span {
-    margin-right: 15px;
-}
-
-.post-likes {
-    display: flex;
-    align-items: center;
-}
-
+/* Style des likes */
 .post-likes i {
     margin-right: 5px;
     color: #e74c3c;
+}
+
+/* Style de la fenêtre modale */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    color: #fff;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #e74c3c;
+}
+
+.close-modal {
+    color: #e74c3c;
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 footer {
