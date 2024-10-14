@@ -1,182 +1,296 @@
-/* Base pour la page */
+/* === 1. STYLES GLOBAUX POUR LA PAGE === */
+
+/* Styles de base pour le corps de la page */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background: url('../img/b.jpg') no-repeat center center fixed;
+    font-family: 'Arial', sans-serif; /* Police de base */
+    background: url('../img/b.jpg') no-repeat center center fixed; /* Image de fond */
     background-size: cover; /* L'image de fond couvre toute la page */
-    color: #f0f0f0;
+    color: #f0f0f0; /* Couleur du texte par défaut */
 }
 
+/* === 2. EN-TÊTE ET TITRE PRINCIPAL === */
+
+/* Style pour l'en-tête de la page */
 header {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Fond noir semi-transparent */
     padding: 20px;
-    text-align: center;
+    text-align: center; /* Centrer le contenu de l'en-tête */
 }
 
-/* Animation pour le titre du forum */
+/* Animation pour le titre principal */
 h1 {
-    font-size: 4rem;
-    color: #e74c3c;
+    font-size: 4rem; /* Taille du titre */
+    color: #e74c3c; /* Couleur rouge (rappel du style apocalyptique) */
     margin: 0;
-    opacity: 0; /* Caché au début */
-    transform: translateY(-50px); /* Décalé vers le haut */
-    transition: opacity 1s ease-out, transform 1s ease-out; /* Animation */
+    opacity: 0; /* Caché au début pour l'animation */
+    transform: translateY(-50px); /* Décalé vers le haut pour l'effet d'animation */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Animation d'apparition */
 }
 
-/* Quand la classe "show" est ajoutée via JavaScript */
+/* Classe ajoutée pour l'animation (visible après chargement) */
 h1.show {
-    opacity: 1;
-    transform: translateY(0); /* Le titre revient à sa position */
+    opacity: 1; /* Le titre devient visible */
+    transform: translateY(0); /* Le titre revient à sa position d'origine */
 }
 
+/* === 3. NAVIGATION === */
+
+/* Style de la liste de navigation (suppression des puces) */
 nav ul {
-    list-style: none;
+    list-style: none; /* Supprime les puces des éléments de la liste */
     padding: 0;
-    display: flex;
-    justify-content: center;
+    display: flex; /* Affichage flexible en ligne */
+    justify-content: center; /* Centre la navigation */
     margin-top: 20px;
+    flex-wrap: wrap; /* Permet de passer sur plusieurs lignes si l'espace est limité */
 }
 
 /* Style des liens de navigation */
+nav ul li {
+    margin: 20px; /* Espace autour de chaque élément pour éviter qu'ils soient trop serrés */
+}
+
 nav ul li a {
-    color: #f0f0f0;
-    text-decoration: none;
-    font-size: 1.2rem;
+    color: #f0f0f0; /* Couleur du texte */
+    text-decoration: none; /* Supprime la ligne de soulignement */
+    font-size: 1.2rem; /* Taille du texte */
     padding: 10px 20px;
-    background-color: rgba(231, 76, 60, 0.7);
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    background-color: rgba(231, 76, 60, 0.7); /* Fond rouge semi-transparent */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s ease; /* Transition au survol */
 }
 
 /* Effet au survol des liens */
 nav ul li a:hover {
-    background-color: rgba(231, 76, 60, 1);
+    background-color: rgba(231, 76, 60, 1); /* Couleur plus intense au survol */
 }
 
+/* === 4. BARRE DE RECHERCHE === */
+
+/* Style pour la barre de recherche */
 #search-bar {
-    margin-bottom: 30px;
-    padding: 10px;
-    width: 100%;
-    max-width: 400px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    margin-bottom: 30px; /* Espace sous la barre */
+    padding: 10px; /* Espacement interne */
+    width: 100%; /* Largeur à 100% du conteneur */
+    max-width: 400px; /* Largeur maximale de la barre */
+    font-size: 1rem; /* Taille du texte */
+    border-radius: 5px; /* Coins arrondis */
+    border: 1px solid #ccc; /* Bordure grise légère */
 }
 
-/* Section principale avec les discussions */
+/* === 5. CONTENU PRINCIPAL ET POSTS === */
+
+/* Conteneur principal (centré) */
 main {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
+    max-width: 1200px; /* Largeur maximale du conteneur */
+    margin: 50px auto; /* Espacement vertical et centrage */
+    padding: 0 20px; /* Espacement horizontal */
 }
 
-/* Section pour chaque catégorie */
+/* Style pour chaque section (ex : Discussions Générales, Astuces, etc.) */
 .section {
-    margin-bottom: 50px;
+    margin-bottom: 50px; /* Espacement sous chaque section */
 }
 
+/* Style pour les titres des sections */
 .section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #e74c3c;
-    padding-bottom: 10px;
+    font-size: 2.5rem; /* Taille des titres de section */
+    margin-bottom: 20px; /* Espace sous le titre */
+    border-bottom: 2px solid #e74c3c; /* Ligne rouge sous le titre */
+    padding-bottom: 10px; /* Espacement sous le titre */
 }
 
-/* Style de chaque post */
+/* === 6. STYLES POUR LES POSTS === */
+
+/* Conteneur pour chaque post */
 .post {
-    display: flex;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    opacity: 0;
-    transform: translateY(50px); /* Légèrement décalé en bas */
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animation d'apparition */
+    display: flex; /* Disposition en ligne pour les éléments internes */
+    align-items: center; /* Centrer les éléments verticalement */
+    background-color: rgba(0, 0, 0, 0.7); /* Fond noir semi-transparent */
+    padding: 15px; /* Espacement interne */
+    margin-bottom: 15px; /* Espace entre chaque post */
+    border-radius: 10px; /* Coins arrondis */
+    opacity: 0; /* Invisible pour l'animation d'apparition */
+    transform: translateY(50px); /* Décalé vers le bas pour l'animation */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animation fluide */
 }
 
+/* Classe ajoutée pour rendre les posts visibles */
 .post.visible {
-    opacity: 1;
-    transform: translateY(0); /* Le post remonte et devient visible */
+    opacity: 1; /* Le post devient visible */
+    transform: translateY(0); /* Le post remonte à sa position d'origine */
 }
 
-/* Style des images de profil */
+/* Style pour les images de profil dans chaque post */
 .post img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; /* Rondes */
-    margin-right: 20px;
+    width: 60px; /* Largeur de l'image */
+    height: 60px; /* Hauteur de l'image (carrée) */
+    border-radius: 50%; /* Image ronde */
+    margin-right: 20px; /* Espacement à droite de l'image */
 }
 
+/* Conteneur pour le contenu des posts (texte) */
 .post-content {
-    flex-grow: 1;
+    flex-grow: 1; /* Prend toute la place restante */
 }
 
+/* Style pour le titre des posts */
 .post-title {
-    font-size: 1.5rem;
-    color: #e74c3c;
-    margin: 0;
+    font-size: 1.5rem; /* Taille du titre */
+    color: #e74c3c; /* Couleur rouge */
+    margin: 0; /* Suppression des marges par défaut */
 }
 
-/* Style de la description des posts */
+/* Style pour la description des posts */
 .post-description {
-    font-size: 1rem;
-    color: #ccc;
-    margin: 5px 0;
+    font-size: 1rem; /* Taille de la description */
+    color: #ccc; /* Couleur grise claire */
+    margin: 5px 0; /* Espacement vertical */
 }
 
-/* Détails sous les posts */
+/* Conteneur pour les détails des posts */
 .post-details {
-    font-size: 0.8rem;
-    color: #aaa;
-    display: flex;
-    justify-content: space-between;
+    font-size: 0.8rem; /* Taille des détails */
+    color: #aaa; /* Couleur gris clair */
+    display: flex; /* Disposition horizontale */
+    justify-content: space-between; /* Espacement entre les éléments */
 }
 
-/* Style des likes */
+/* Style pour les boutons de like */
 .post-likes i {
-    margin-right: 5px;
-    color: #e74c3c;
+    margin-right: 5px; /* Espace entre l'icône et le texte */
+    color: #e74c3c; /* Couleur rouge pour l'icône de like */
 }
 
-/* Style de la fenêtre modale */
+/* === 7. STYLES POUR LA FENÊTRE MODALE === */
+
+/* Conteneur global pour la modale */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 100;
+    display: none; /* Cachée par défaut */
+    position: fixed; /* Fixe à l'écran */
+    z-index: 100; /* Au-dessus des autres éléments */
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
+    width: 100%; /* Couvre toute la largeur */
+    height: 100%; /* Couvre toute la hauteur */
+    background-color: rgba(0, 0, 0, 0.8); /* Fond noir semi-transparent */
+    justify-content: center; /* Centre horizontalement le contenu */
+    align-items: center; /* Centre verticalement le contenu */
 }
 
+/* Contenu interne de la modale */
 .modal-content {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
-    color: #fff;
+    background-color: #333; /* Fond gris foncé */
+    padding: 20px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    width: 80%; /* Largeur par rapport à l'écran */
+    max-width: 600px; /* Largeur maximale */
+    color: #fff; /* Texte blanc */
 }
 
+/* Style pour le titre de la modale */
 .modal-content h3 {
-    margin-top: 0;
-    color: #e74c3c;
+    margin-top: 0; /* Suppression de la marge en haut */
+    color: #e74c3c; /* Couleur rouge pour le titre */
 }
 
+/* Style pour le bouton de fermeture de la modale */
 .close-modal {
-    color: #e74c3c;
-    float: right;
-    font-size: 1.5rem;
-    cursor: pointer;
+    color: #e74c3c; /* Couleur rouge pour la croix de fermeture */
+    float: right; /* Aligne la croix à droite */
+    font-size: 1.5rem; /* Taille de la croix */
+    cursor: pointer; /* Curseur en forme de main */
 }
 
+/* === 8. STYLES POUR LE PIED DE PAGE === */
+
+/* Style du pied de page */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center; /* Texte centré */
+    padding: 20px; /* Espacement interne */
+    background-color: rgba(0, 0, 0, 0.8); /* Fond noir semi-transparent */
+    color: #f0f0f0; /* Couleur du texte */
+}
+
+/* === 9. MEDIA QUERIES POUR LE RESPONSIVE === */
+
+/* Pour les écrans moyens (tablettes et petits ordinateurs) */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 3rem; /* Réduit la taille du titre */
+    }
+
+    nav ul li a {
+        font-size: 1rem; /* Réduit la taille des liens de navigation */
+    }
+
+    .section h2 {
+        font-size: 2rem; /* Réduit la taille des titres de section */
+    }
+
+    .post {
+        flex-direction: column; /* Passe les posts en disposition verticale */
+        align-items: flex-start; /* Aligne les éléments au début */
+    }
+
+    .post img {
+        width: 50px; /* Réduit la taille des images de profil */
+        height: 50px;
+    }
+
+    .post-title {
+        font-size: 1.2rem; /* Réduit la taille du titre des posts */
+    }
+}
+
+/* Pour les petits écrans (smartphones) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem; /* Réduit encore la taille du titre */
+    }
+
+    /* Passe la navigation en colonne sur petits écrans */
+    nav ul {
+        flex-direction: column;
+    align-items: center;
+    height: 174px;
+    }
+
+    nav ul li a {
+        width: 100%; /* Les liens prennent toute la largeur */
+        text-align: center; /* Centre le texte dans chaque lien */
+        padding: 10px;
+        margin: 10px 0; /* Espacement vertical entre les liens */
+    }
+
+    .section h2 {
+        font-size: 1.8rem; /* Réduit la taille des titres de section */
+    }
+
+    .post {
+        flex-direction: column; /* Les posts passent en disposition verticale */
+        align-items: flex-start; /* Aligne les éléments au début */
+    }
+
+    .post img {
+        width: 45px; /* Réduit la taille des images de profil pour les petits écrans */
+        height: 45px;
+    }
+
+    .post-title {
+        font-size: 1rem; /* Réduit la taille du titre des posts */
+    }
+
+    #search-bar {
+        max-width: 100%; /* La barre de recherche prend toute la largeur de l'écran */
+        height: 35px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .modal-content {
+        width: 90%; /* La modale est un peu plus large sur petits écrans */
+    }
 }
