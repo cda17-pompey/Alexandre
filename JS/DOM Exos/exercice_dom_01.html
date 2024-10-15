@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice : Sélection d'éléments du DOM</title>
+    <script type="module">
+        // Complétez le code JavaScript ci-dessous
+
+        // 1. Sélectionnez l'élément avec l'id "titre-principal"
+        const titre = document.getElementById('titre-principal'); // Votre code ici
+        console.log(titre)
+
+        // 2. Sélectionnez tous les éléments avec la classe "paragraphe"
+        const paragraphes = document.getElementsByClassName('paragraphe'); // Votre code ici
+        console.log(paragraphes)
+
+        // 3. Sélectionnez tous les éléments <li>
+        const listItems = document.getElementsByTagName('li'); // Votre code ici
+        console.log(listItems)
+
+        // 4. Sélectionnez le premier élément <p> en utilisant querySelector
+        const premierParagraphe = document.getElementsByTagName('p')[0]; // Votre code ici
+        console.log(premierParagraphe)
+
+        // 5. Affichez les résultats dans l'élément avec l'id "resultat"
+        const resultat = document.getElementById('resultat');
+        resultat.value = `
+            Titre : ${titre.textContent}
+            Nombre de paragraphes : ${paragraphes.length}
+            Nombre d'éléments de liste : ${listItems.length}
+            Premier paragraphe : ${premierParagraphe.textContent}
+        `;
+    </script>
+</head>
+
+<body>
+    <h1 id="titre-principal">Bienvenue sur notre page</h1>
+    <p class="paragraphe">Ceci est un paragraphe.</p>
+    <p class="paragraphe">Voici un autre paragraphe.</p>
+    <ul>
+        <li>Élément 1</li>
+        <li>Élément 2</li>
+        <li>Élément 3</li>
+    </ul>
+    <textarea id="resultat"></textarea>
+</body>
+
+</html>
