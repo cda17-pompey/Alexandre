@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const taskText = document.createElement('span');
             taskText.textContent = task.text;
-            taskText.classList.add('completed');
+            if (task.completed) taskText.classList.add('completed');
             taskText.addEventListener('click', toggleTaskCompletion); // Toggle complet
 
             const deleteBtn = document.createElement('button');
