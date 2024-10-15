@@ -86,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
             renderTasks(); // Rafraîchit
         });
     });
+    // Charger les tâches au démarrage
+    renderTasks();
 })
-
-// Charger les tâches au démarrage
-renderTasks();
