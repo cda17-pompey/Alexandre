@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercice : Modification du contenu et des attributs</title>
+  <script type="module">
+    // Complétez le code JavaScript ci-dessous
+
+    // 1. Modifiez le texte du titre
+    // Votre code ici
+    const title = document.getElementById('titre');
+    title.textContent = 'Titre modifié';
+
+    // 2. Ajoutez du contenu HTML au paragraphe
+    // Votre code ici
+    const paragraphe = document.getElementById('paragraphe');
+    paragraphe.innerHTML += '<br><a href="https://www.google.com/">Rejoindre le lien</a>';
+
+    // 3. Changez la source de l'image
+    // Votre code ici
+    const image = document.getElementById('image').src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR92KQvp9zbMy1J941a2_Umyt9ZOrtTt92SXA&s';
+
+    // 4. Ajoutez un attribut "disabled" au bouton
+    // Votre code ici
+    const button = document.getElementById('bouton');
+    button.setAttribute('disabled', true);
+
+    // 5. Ajoutez la classe "highlight" au paragraphe
+    // Votre code ici
+    paragraphe.classList.add('highlight');
+
+    // Bonus : Créez une fonction qui alterne la classe "highlight" sur le paragraphe lors du clic sur le bouton
+    // Votre code ici
+
+    button.addEventListener('click', () => {
+      paragraphe.classList.toggle('highlight');
+    })
+
+  </script>
+</head>
+
+<body>
+  <h1 id="titre">Titre original</h1>
+  <p id="paragraphe">Contenu du paragraphe</p>
+  <img id="image" src="https://via.placeholder.com/150" alt="Image placeholder">
+  <button id="bouton">Cliquez-moi</button>
+
+</body>
+
+</html>
