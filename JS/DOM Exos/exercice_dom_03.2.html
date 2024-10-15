@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice : Création et suppression d'éléments</title>
+    <script type="module">
+        const listeTaches = document.getElementById('liste-taches');
+        const inputNouvelleTache = document.getElementById('nouvelle-tache');
+        const boutonAjouter = document.getElementById('ajouter-tache');
+        const deleteTacheButtons = document.getElementsByClassName('deleteTache')
+
+        //Suite de l'autre exo
+        const ajouterTacheV2 = () => {
+            // Si l'input est vide, ne pas ajouter de tâche
+            const texteTache = inputNouvelleTache.value.trim();
+            if (!texteTache) return;
+
+            // Créez un nouvel élément <li>
+            const newLi = document.createElement('li');
+            newLi.textContent = texteTache;
+
+            // Créez un bouton "Supprimer" et ajoutez-le au <li>
+            const newButton = document.createElement('button');
+            newButton.textContent = 'Supprimer';
+            newButton.classList.add('deleteTache');
+
+            // Ajoutez un événement au bouton pour supprimer l'élément <li> parent
+            newButton.addEventListener('click', () => {
+                newLi.remove();
+            });
+
+            // Ajoutez le bouton au <li> et le <li> à la liste
+            newLi.appendChild(newButton);
+            listeTaches.appendChild(newLi);
+
+            // Videz l'input après l'ajout
+            inputNouvelleTache.value = '';
+        };
+
+        inputNouvelleTache.addEventListener('keypress', (key) => {
+            if (key.key == 'Enter') {
+                ajouterTacheV2()
+            }
+        })
+
+        const tacheTerminer = (event) => {
+            if(event.target.tagName === 'LI'){
+                event.target.style = 'text-decoration:line-through;'
+            }
+        }
+
+        listeTaches.addEventListener('click', tacheTerminer);
+
+    </script>
+</head>
+
+<body>
+    <h1>Liste de tâches</h1>
+    <ul id="liste-taches"></ul>
+    <input type="text" id="nouvelle-tache" placeholder="Nouvelle tâche">
+    <button id="ajouter-tache">Ajouter</button>
+</body>
+
+</html>
