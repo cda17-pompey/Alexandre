@@ -183,3 +183,9 @@ window.addEventListener('click', (event) => {
         document.body.style.overflow = 'auto';
     }
 });
+
+document.getElementById('burger-menu').addEventListener('click', function() {
+    const headerContainer = document.querySelector('.header-container');
+    headerContainer.classList.toggle('active');
+    this.classList.toggle('active');
+});

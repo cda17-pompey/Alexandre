@@ -34,6 +34,21 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+}
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px;
+    transition: all 0.3s ease;
 }
 
 .search-bar {
@@ -58,6 +73,39 @@ header button {
 
 header button {
     background-color: #f4f4f4;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .search-bar, #dark-mode-toggle {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .header-container.active .search-bar, .header-container.active #dark-mode-toggle {
+        display: block;
+        margin-top: 1rem;
+    }
+}
+
+/* Effet du menu burger */
+.burger-menu.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Main Content Styling */
