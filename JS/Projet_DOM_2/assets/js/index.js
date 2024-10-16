@@ -30,7 +30,7 @@ function displayRecipes(recipesToDisplay) {
         let imgSrc = 'assets/images/' + recipe.title.toLowerCase().replaceAll(' ', '-');
         recipeCard.classList.add('recipe-card');
         recipeCard.innerHTML = `
-            <img class="recette-img" src="${imgSrc}.jpg" alt="Image de ${recipe.title}">
+            <img src="${imgSrc}.jpg" alt="Image de ${recipe.title}">
             <h3>${recipe.title}</h3>
             <p>Catégorie: ${recipe.category}</p>
             <p>Difficulté: ${recipe.difficulty}</p>

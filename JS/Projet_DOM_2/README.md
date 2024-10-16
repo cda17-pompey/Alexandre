@@ -11,12 +11,16 @@ Bienvenue sur le **Blog de Recettes Gourmandes** ! Ce projet est un site web int
 - [Contributions](#contributions)
 - [Auteurs](#auteurs)
 
+---
+
 ## Technologies utilisées
 
 - **HTML** : pour la structure sémantique de la page web.
 - **CSS** : pour le style et la mise en page responsive, y compris Flexbox, CSS Grid, et mode sombre.
 - **JavaScript** : pour la manipulation dynamique du DOM, la recherche en temps réel, le mode sombre, et la modal pour afficher les détails de chaque recette.
 - **Google Fonts** : pour utiliser la police "Roboto".
+
+---
 
 ## Fonctionnalités
 
@@ -28,12 +32,16 @@ Bienvenue sur le **Blog de Recettes Gourmandes** ! Ce projet est un site web int
 - **Mode sombre** : Un bouton pour activer/désactiver le mode sombre afin de réduire la fatigue oculaire.
 - **Commentaires** : Les utilisateurs peuvent laisser des commentaires sur chaque recette.
 
+---
+
 ## Structure du projet
 
 - `index.html` : La page principale avec la structure HTML de base.
 - `assets/css/index.css` : Fichier CSS pour la mise en page et les styles de la page.
 - `assets/js/index.js` : Fichier JavaScript pour la manipulation du DOM, la recherche dynamique, le filtrage, le mode sombre, et les modals.
 - `assets/images/` : Dossier pour les images des recettes.
+
+---
 
 ## Instructions d'installation
 
@@ -50,12 +58,16 @@ Bienvenue sur le **Blog de Recettes Gourmandes** ! Ce projet est un site web int
 3. **Ouvrez le fichier HTML dans votre navigateur** :
    Vous pouvez simplement ouvrir `index.html` avec un navigateur pour voir le site en action.
 
+---
+
 ## Utilisation
 
 - **Recherche** : Entrez le nom d'une recette dans la barre de recherche située dans l'en-tête pour filtrer les recettes disponibles.
 - **Mode sombre** : Cliquez sur le bouton "Mode Sombre" situé dans l'en-tête pour activer ou désactiver le mode sombre.
 - **Voir les détails** : Cliquez sur une recette pour ouvrir une modal avec plus de détails sur la recette, ainsi qu'une section de commentaires.
 - **Ajouter un commentaire** : Utilisez la zone de saisie dans la modal pour ajouter un commentaire à une recette.
+
+---
 
 ## Contributions
 
@@ -66,7 +78,27 @@ Les contributions sont les bienvenues ! Si vous souhaitez améliorer le projet, 
 3. **Effectuez des commits** de vos modifications
 4. **Ouvrez une Pull Request**
 
-## Auteurs
+---
+
+## Performances
+
+Score actuel sur ***Lighthouse Mobile*** :
+
+1. **Performance** : 51
+2. **Accessibility** : 96
+3. **Best Practices** : 100
+4. **SEO** : 91
+
+Score actuel sur ***Lighthouse Desktop*** :
+
+1. **Performance** : 69
+2. **Accessibility** : 96
+3. **Best Practices** : 100
+4. **SEO** : 91
+
+---
+
+## Auteur
 
 - **Djinn (Alexandre)** - Créateur et développeur principal
 
