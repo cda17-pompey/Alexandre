@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <title>Blog de Recettes Gourmandes</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Blog de Recettes Gourmandes</h1>
+            <p>La cuisine facile pour tous</p>
+            <input type="text" id="search-bar" placeholder="Rechercher une recette..." aria-label="Rechercher une recette" class="search-bar">
+            <button id="dark-mode-toggle" aria-label="Activer/Désactiver le mode sombre">Mode Sombre</button>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Recette du Jour</h2>
+            <div id="recipe-of-the-day" class="recipe-highlight">
+                <!-- La recette du jour sera ajoutée ici dynamiquement -->
+            </div>
+        </section>
+    
+        <section>
+            <h2>Nos Recettes</h2>
+            <div id="recipes" aria-live="polite" class="recipes-grid">
+                <!-- Les recettes seront ajoutées ici dynamiquement -->
+            </div>
+        </section>
+    
+        <aside>
+            <h2>Catégories</h2>
+            <ul id="categories" aria-label="Liste des catégories de recettes" class="categories-list">
+                <!-- Les catégories seront ajoutées ici dynamiquement -->
+            </ul>
+        </aside>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Blog de Recettes Gourmandes</p>
+        </div>
+    </footer>
+    
+    <!-- Modal pour les détails des recettes -->
+    <div id="recipe-modal" class="modal" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <span id="close-modal" class="close" role="button" aria-label="Fermer la fenêtre">&times;</span>
+            <div id="modal-details">
+                <!-- Détails de la recette seront ajoutés ici dynamiquement -->
+            </div>
+            <div id="comments-section" class="comments-section">
+                <h3>Commentaires</h3>
+                <ul id="comments-list"></ul>
+                <textarea id="comment-input" placeholder="Écrire un commentaire..." aria-label="Écrire un commentaire"></textarea>
+                <button id="submit-comment" aria-label="Ajouter un commentaire">Ajouter un commentaire</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/js/index.js"></script>
+</body>
+
+</html>
