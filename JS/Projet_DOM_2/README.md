@@ -9,7 +9,8 @@ Bienvenue sur le **Blog de Recettes Gourmandes** ! Ce projet est un site web int
 - [Instructions d'installation](#instructions-dinstallation)
 - [Utilisation](#utilisation)
 - [Contributions](#contributions)
-- [Auteurs](#auteurs)
+- [Performances](#performances)
+- [Auteurs](#auteur)
 
 ---
 
