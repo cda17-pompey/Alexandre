@@ -104,6 +104,8 @@ document.getElementById('submit-comment').addEventListener('click', () => {
         saveComment(recipe.id, commentInput.value.trim());
         commentInput.value = '';
         displayComments(recipe.id);
+    } else {
+        alert("Vous ne pouvez pas laisser un commentaire vide")
     }
 });
 
