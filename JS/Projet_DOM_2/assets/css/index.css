@@ -81,7 +81,8 @@ header button {
         justify-content: center;
     }
 
-    .search-bar, #dark-mode-toggle {
+    .search-bar,
+    #dark-mode-toggle {
         display: none;
     }
 
@@ -89,7 +90,8 @@ header button {
         display: flex;
     }
 
-    .header-container.active .search-bar, .header-container.active #dark-mode-toggle {
+    .header-container.active .search-bar,
+    .header-container.active #dark-mode-toggle {
         display: block;
         margin-top: 1rem;
     }
@@ -203,8 +205,10 @@ aside {
 .categories-list li:hover {
     background-color: #ff6f61;
     color: #fff;
-    transform: scale(1.05); /* Agrandir légèrement l'élément lors du survol */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Ajouter une ombre pour donner un effet de profondeur */
+    transform: scale(1.05);
+    /* Agrandir légèrement l'élément lors du survol */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* Ajouter une ombre pour donner un effet de profondeur */
 }
 
 /* Footer Styling */
@@ -246,6 +250,18 @@ footer {
     width: 90%;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
     position: relative;
+}
+
+.modal-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.modal-content {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .recette-img {
