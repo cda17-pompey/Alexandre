@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
             saveTasks(); // Sauvegarde dans localStorage
             renderTasks(); // Rafraîchit l'affichage
             taskInput.value = ''; // Vide l'input
+        } else {
+            alert("Merci de ne pas laisser l'input vide")
         }
     });
 
@@ -86,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             renderTasks(); // Rafraîchit
         });
     });
+    
     // Charger les tâches au démarrage
     renderTasks();
 })
